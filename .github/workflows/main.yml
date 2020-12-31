@@ -8,12 +8,8 @@ jobs:
     name: deploydoc
     runs-on: ubuntu-latest
     steps:
-      - name: Markdown-HTML
-        uses: ZacJW/markdown-html-action@1.1.0
-
-        with:
-          input_files: '["wildcard*.md"]'
-          output_files: '"final_document.html"'
-          builtin_stylesheet: 'style.css'
-          packages: 'pymdown-extensions'
-          extensions: '["pymdownx.extra"]'
+      - name: Create PDF and HTML
+        uses: BaileyJM02/markdown-to-pdf@v1.0.1
+        input_dir: raw
+        output_dir: output
+        build_html: true
