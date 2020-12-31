@@ -1,11 +1,19 @@
 name: Markdown-HTML
-uses: ZacJW/markdown-html-action@1.1.0
+
 on:
   push:
     branches: main
-with:
-  input_files: '["wildcard*.md"]'
-  output_files: '"final_document.html"'
-  builtin_stylesheet: 'style.css'
-  packages: 'pymdown-extensions'
-  extensions: '["pymdownx.extra"]'
+jobs:
+  dewitt:
+    name: deploydoc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Markdown-HTML
+        uses: ZacJW/markdown-html-action@1.1.0
+
+        with:
+          input_files: '["wildcard*.md"]'
+          output_files: '"final_document.html"'
+          builtin_stylesheet: 'style.css'
+          packages: 'pymdown-extensions'
+          extensions: '["pymdownx.extra"]'
