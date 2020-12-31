@@ -2,7 +2,7 @@ name: Markdown-HTML
 
 on:
   push:
-    branches: main
+    branches: master
 jobs:
   dewitt:
     name: deploydoc
