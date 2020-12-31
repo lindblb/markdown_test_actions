@@ -16,7 +16,7 @@ jobs:
           input_dir: raw
           output_dir: output
           build_html: true
-      - uses: actions/upload-artifact
+      - uses: actions/upload-artifact@v1
         with:
           name: raw
           path: output
