@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: baileyjm02/markdown-to-pdf@v1
+      - uses: baileyjm02/markdown-to-pdf
         with:
           input_dir: raw
           output_dir: output
           build_html: true
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact
         with:
           name: raw
           path: output
