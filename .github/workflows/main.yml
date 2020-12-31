@@ -3,13 +3,20 @@ name: Markdown-HTML
 on:
   push:
     branches: master
+    paths:
+      - 'raw/**.md'
 jobs:
   dewitt:
     name: deploydoc
     runs-on: ubuntu-latest
     steps:
-      - name: Create PDF and HTML
-        uses: BaileyJM02/markdown-to-pdf@v1.0.1
-        input_dir: raw
-        output_dir: output
-        build_html: true
+      - uses: actions/checkout@v2
+      - uses: BaileyJM02/markdown-to-pdf@v1.0.1
+        with:
+          input_dir: raw
+          output_dir: output
+          build_html: true
+      - uses: actions/upload-artifact@v1
+        with:
+          name: raw
+          path: output
