@@ -3,6 +3,8 @@ name: Markdown-HTML
 on:
   push:
     branches: master
+    paths:
+      - 'raw/**.md'
 jobs:
   dewitt:
     name: deploydoc
