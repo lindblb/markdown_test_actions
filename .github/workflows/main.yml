@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Create PDF and HTML
         uses: BaileyJM02/markdown-to-pdf@v1.0.1
-        input_dir: raw
-        output_dir: output
-        build_html: true
+        with:
+          input_dir: raw
+          output_dir: output
+          build_html: true
